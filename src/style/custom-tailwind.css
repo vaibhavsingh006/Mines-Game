@@ -1,24 +1,9 @@
-/* Custom utility classes using Tailwind
-.range-custom {
-    @apply w-full h-2 bg-[#f3f5f5] rounded-lg outline-none transition-all ease-in-out;
-}
-
-.range-custom::-webkit-slider-thumb {
-    @apply w-5 h-5 rounded-full bg-gradient-to-r from-[#24ee89] to-[#9fe871] border-2 border-[#444c4d] cursor-pointer shadow-lg transition-all;
-}
-
-.range-custom::-moz-range-thumb {
-    @apply w-5 h-5 rounded-full bg-gradient-to-r from-[#24ee89] to-[#9fe871] border-2 border-[#444c4d] cursor-pointer;
-} */
-/* Custom styles for the range input */
-
 /* Custom range slider styles */
 .range-custom {
     -webkit-appearance: none;
     width: 100%;
     height: 10px;
     border-radius: 10px;
-    /* background: linear-gradient(to right, #24ee89 0%, #33f393 var(--value, 50%), #3b3b3b var(--value, 50%), #3b3b3b 100%); */
     background: linear-gradient(to right,
             #24ee89 0%,
             #9fe871 var(--value, 0%),
@@ -77,13 +62,10 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    /* Matches the box width */
     height: 100%;
     background-image: url('../assets/mines-effect.png');
     background-repeat: no-repeat;
     background-size: cover;
     animation: explosion 0.4s steps(15) forwards;
-    /* Adjust duration and steps as needed */
     z-index: 99999 !important;
-    /* Ensure it appears above the grid */
 }
