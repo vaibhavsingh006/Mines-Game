@@ -21,10 +21,10 @@ function App() {
 
 
   return (
-    <div className="bg-gray-900 text-white min-h-screen flex flex-col items-center">
+    <div className="bg-[#232626] text-white min-h-screen flex flex-col items-center">
       <div className="w-full max-w-screen-xl mx-auto">
         {/* Header */}
-        <div className="flex justify-center items-center p-4 bg-gray-800 rounded-t-lg">
+        <div className="flex justify-center items-center p-4 bg-[#2c2d2e] rounded-t-lg">
 
           <span className="text-gray-400 text-sm">
             {gameState === "playing"
@@ -57,8 +57,8 @@ function App() {
         {/* Footer */}
         <div className="flex justify-between items-center p-4 bg-[#2c2d2e] rounded-lg rounded-t-none">
           <div className="flex items-center space-x-4 text-gray-400">
-            <span className=" font-bold"><i class="fa-solid text-gray-500 fa-star"></i> 20806</span>
-            <span className=" font-bold"><i class="fa-solid text-gray-500 fa-heart"></i> 20845</span>
+            <span className=" flex items-center justify-center sm:block font-bold"><i class="fa-solid text-gray-500 fa-star"></i> 20806</span>
+            <span className=" flex items-center justify-center sm:block font-bold"><i class="fa-solid text-gray-500 fa-heart"></i> 20845</span>
           </div>
           <div className="flex items-center space-x-4">
 
