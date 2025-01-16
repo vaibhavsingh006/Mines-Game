@@ -2,23 +2,23 @@ import React, { useEffect } from "react";
 import "../style/custom-tailwind.css";
 import ind from "../assets/inr.webp"
 
-const Sidebar = ({ mines, setMines, amount, setAmount, onBet }) => {
+const Sidebar = ({ mines, setMines, amount, setAmount, onBet, gameState }) => {
     useEffect(() => {
-        // Initialize the slider gradient
+
         const slider = document.querySelector(".range-custom");
         if (slider) {
-            const percentage = ((mines - 4) / (24 - 4)) * 100; // Calculate initial percentage
+            const percentage = ((mines - 4) / (24 - 4)) * 100;
             slider.style.setProperty("--value", `${percentage}%`);
         }
-    }, [mines]); // Dependency ensures it runs when `mines` changes
+    }, [mines]);
 
     const handleMinesChange = (e) => {
         const value = parseInt(e.target.value);
         setMines(value);
 
-        // Dynamically update the slider background
+
         const slider = e.target;
-        const percentage = ((value - 4) / (24 - 4)) * 100; // Calculate percentage
+        const percentage = ((value - 4) / (24 - 4)) * 100;
         slider.style.setProperty("--value", `${percentage}%`);
     };
 
@@ -74,8 +74,17 @@ const Sidebar = ({ mines, setMines, amount, setAmount, onBet }) => {
             {/* Bet Button */}
             <button
                 onClick={onBet}
-                className=" w-[-webkit-fill-available] m-4 py-2 rounded text-center text-black font-bold bg-gradient-to-r from-[#24ee89] to-[#9fe871]"
-                style={{ boxShadow: "0 0 12px #23ee884d, 0 -2px #1dca6a inset" }}
+                disabled={gameState === "playing"}
+                className={`w-[-webkit-fill-available] m-4 py-2 rounded text-center font-bold ${gameState === "playing"
+                    ? "bg-gray-500 text-gray-300 cursor-not-allowed"
+                    : "bg-gradient-to-r from-[#24ee89] to-[#9fe871] text-black"
+                    }`}
+                style={{
+                    boxShadow:
+                        gameState === "playing"
+                            ? "none"
+                            : "0 0 12px #23ee884d, 0 -2px #1dca6a inset",
+                }}
             >
                 Bet
             </button>

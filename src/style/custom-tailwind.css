@@ -59,3 +59,31 @@
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+
+
+@keyframes explosion {
+    from {
+        background-position-x: 0;
+    }
+
+    to {
+        background-position-x: 100%;
+    }
+}
+
+.animate-explosion {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    /* Matches the box width */
+    height: 100%;
+    background-image: url('../assets/mines-effect.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: explosion 0.4s steps(15) forwards;
+    /* Adjust duration and steps as needed */
+    z-index: 99999 !important;
+    /* Ensure it appears above the grid */
+}
