@@ -1,0 +1,61 @@
+/* Custom utility classes using Tailwind
+.range-custom {
+    @apply w-full h-2 bg-[#f3f5f5] rounded-lg outline-none transition-all ease-in-out;
+}
+
+.range-custom::-webkit-slider-thumb {
+    @apply w-5 h-5 rounded-full bg-gradient-to-r from-[#24ee89] to-[#9fe871] border-2 border-[#444c4d] cursor-pointer shadow-lg transition-all;
+}
+
+.range-custom::-moz-range-thumb {
+    @apply w-5 h-5 rounded-full bg-gradient-to-r from-[#24ee89] to-[#9fe871] border-2 border-[#444c4d] cursor-pointer;
+} */
+/* Custom styles for the range input */
+
+/* Custom range slider styles */
+.range-custom {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 10px;
+    /* background: linear-gradient(to right, #24ee89 0%, #33f393 var(--value, 50%), #3b3b3b var(--value, 50%), #3b3b3b 100%); */
+    background: linear-gradient(to right,
+            #24ee89 0%,
+            #9fe871 var(--value, 0%),
+            #3b3b3b var(--value, 0%),
+            #3b3b3b 100%);
+    outline: none;
+    transition: background 0.3s ease-in-out;
+}
+
+.range-custom::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 17px;
+    border-radius: 8px !important;
+    height: 23px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.range-custom::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.range-custom::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
